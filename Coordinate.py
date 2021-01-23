@@ -30,6 +30,10 @@ class Coordinate:
     def validate_coordinate(x,y):
         return (x < Coordinate.limit["width"] and x >= 0) and (y < Coordinate.limit["height"] and y >= 0)
 
+    @staticmethod
+    def validate_coordinate(coordinate):
+        return (coordinate.X < Coordinate.limit["width"] and coordinate.X >= 0) and (coordinate.Y < Coordinate.limit["height"] and coordinate.Y >= 0)
+
     @property
     def X(self):
         return self.x

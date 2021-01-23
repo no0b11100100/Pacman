@@ -12,6 +12,7 @@ class Game:
         self.map = Map(width, height, self.screen)
         self.isGame = True
         self.tickrate = 30
+        self.map.generate_map()
 
 
     def draw(self):
