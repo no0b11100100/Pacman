@@ -12,7 +12,7 @@ class Game:
         self.tile_size = 50
         self.map = Map(width, height, self.screen, self.tile_size)
         self.isGame = True
-        self.tickrate = 60
+        self.tickrate = 200
         self.map.generate_map()
         self.player = Player(self.tile_size)
 

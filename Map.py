@@ -47,7 +47,7 @@ class Map:
             next.Walls['top'] = False
 
     def check_neighbors(self, cell):
-        find_index = lambda coordinate: coordinate.X + coordinate.Y * self.width // self.tile_size
+        find_index = lambda coordinate: coordinate.X + coordinate.Y * (self.width // self.tile_size)
         neighbors = []
         for neighbor in cell.Neighbors:
             c = self.cells[find_index(neighbor)]
