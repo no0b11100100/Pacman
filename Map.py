@@ -58,10 +58,10 @@ class Map:
 
     def generate_map(self):
         self.stack.append(self.current_cell)
-        while len(self.stack) != 0:
+        while self.stack:
             self.current_cell.isVisited = True
             neighbors = self.check_neighbors(self.current_cell)
-            next_cell = choice(neighbors) if len(neighbors) != 0 else False
+            next_cell = choice(neighbors) if neighbors else False
             if next_cell:
                 next_cell.isVisited = True
                 self.stack.append(self.current_cell)
