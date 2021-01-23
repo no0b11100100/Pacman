@@ -1,6 +1,7 @@
 import pygame
 from Coordinate import *
 import math
+
 class Player:
     def __init__(self, tile_size):
         pygame.init()
