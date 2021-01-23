@@ -1,4 +1,3 @@
-import pygame
 from Coordinate import *
 
 class Cell:
@@ -12,7 +11,6 @@ class Cell:
                             Coordinate(self.x + 1, self.y),
                             Coordinate(self.x, self.y + 1),
                             Coordinate(self.x - 1, self.y) ]
-        self.neighbors = [neighbor for neighbor in self.neighbors if Coordinate.validate_coordinate(neighbor)]
 
     @property
     def Position(self):
@@ -32,12 +30,5 @@ class Cell:
 
     @property
     def Neighbors(self):
+        self.neighbors = [neighbor for neighbor in self.neighbors if Coordinate.validate_coordinate(neighbor)]
         return self.neighbors
-    
-    def check_neighbors(self):
-        neighbors = []
-        for neighbor in self.neighbors:
-            if not neighbor.visited:
-                neighbors.append(neighbor)
-
-        return neighbors

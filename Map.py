@@ -3,14 +3,14 @@ from Cell import *
 from random import choice
 
 class Map:
-    def __init__(self, width, height, screen):
+    def __init__(self, width, height, screen, size):
         pygame.init()
         self.width, self.height = width, height
         self.isGame = True
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.screen.fill(pygame.Color('black'))
-        self.tile_size = 50
+        self.tile_size = size
         Coordinate.limit["width"], Coordinate.limit["height"] = width // self.tile_size, height // self.tile_size
         self.cells = [Cell(col, row, self.tile_size) for row in range(height // self.tile_size) for col in range(width // self.tile_size)]
         self.current_cell = self.cells[0]
